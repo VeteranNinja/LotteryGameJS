@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="578" height="300"></canvas>
+    <script>
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+
+      context.beginPath();
+      context.rect(148, 50, 425, 100);
+      context.fillStyle = 'blue';
+      context.fill();
+      context.lineWidth = 7;
+      context.strokeStyle = 'black';
+      context.stroke();
+	   context.font = 'italic 35pt Calibri';
+	   context.fillStyle = 'yellow';
+      context.fillText('University of Bolton', 150, 100);
+	  context.beginPath();
+      context.arc(490, 150, 50, 0, Math.PI, false);
+      context.closePath();
+      context.lineWidth = 5;
+      context.fillStyle = 'red';
+      context.fill();
+      context.strokeStyle = '#550000';
+      context.stroke();
+	   context.beginPath();
+      context.arc(240, 150, 50, 0, Math.PI, false);
+      context.closePath();
+      context.lineWidth = 5;
+      context.fillStyle = 'red';
+      context.fill();
+      context.strokeStyle = '#550000';
+      context.stroke();
+    </script>
+  </body>
+</html>      

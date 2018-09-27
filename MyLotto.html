@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <title>Najeeb Hassan - 1304464 - Web Programming - Assignment 1 </title>
+ <link rel="stylesheet" media="screen" href="css/lottery.css">
+ <script src="js/najeeb.js"></script>
+</head>
+
+<body background="images/background.jpg">
+
+<div class="title">
+<h1 align="left"> HTML5 National Lottery Game </h1>
+
+</div>
+
+
+<div class="links">
+<ul>
+<li style="float:left"><a href="myHome.html">Home</a></li> 
+<li style="float:left"><a href="lotteryV2-anotherlook.html">Lottery Game</a></li> 
+<li style="float:left"><a href="ClassExercises.html">Class Exercises!</a></li>
+
+</ul>  
+</div>
+  
+
+<!-----------------------------------------------------------------------------------------
+
+This is the start of the form information in which all the activity for the page is stored.
+Includes buttons, the canvas and site logo amongst other features.
+
+------------------------------------------------------------------------------------------->
+
+<form name="lotto">
+<table width=50% border=2 table bgcolor="red" table align= "center">
+
+  <tr>
+     <td> <img src="images/lotto.png" align="right">
+     <canvas id="myCanvas" width="578" height="200"></canvas>
+    <script src="js/lotto.js"></script>
+    <p> Below is our Lottery Game; Good luck Player! </p>
+    <p> Animation Idea learnt from HTML5tutorials.com </p>
+       </td>
+  </tr> <tr>
+     <td><p>
+       <input type="button" value="Enter your numbers" onClick="getUsersNumbers()">
+     </p>
+       <p>Your Numbers:
+         <textarea name="usersNumbers" rows="1" cols="30"></textarea>
+       </p>
+
+       <input type="button" value="Enter Bonus Ball Number" onClick="bonusNumber()">
+
+       <p>Bonus Ball:
+         <textarea name="bonusBall" rows="1" cols="30"></textarea>
+       </p>
+
+       <p>
+         <input type="button" value="Check Matching Numbers"  onClick="getMatch()">
+       </p>
+       <p>
+
+         Number of Lottery numbers that matched:
+         <textarea name="getMatchField" rows="1" cols="60"></textarea>
+       </p>
+       </td>
+   </tr>
+   <tr>
+     <td><p>
+       <input type=button value="Check today's lottery numbers" onClick="drawBalls()">
+       <input type=button value="Try Again if you're feeling lucky!" onClick="myFunction()">
+     </p>
+     </td>
+     </tr>
+  <tr>
+      <td><h3>The Numbers are shown below:</h3>
+
+
+      <canvas id="lottoCanvas" width="800" height="350"
+ style="border:5px solid #0025D6;" > Your browser does not support the HTML5 canvas tag. </canvas></td></tr>
+</table>
+
+</form>
+
+
+
+</body>
+
+</html>

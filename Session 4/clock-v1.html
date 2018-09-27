@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Clock</title>
+<script>
+ function displayTime()
+ {
+	 var now = new Date();
+ document.digitalClock.display.value = now.toLocaleString();
+ // This function executes automatically every 1 second. // It determines the date and time and displays it in the form field // named ‘display’, see HTML code below
+ }
+ </script>
+</head>
+
+<body onload = "setInterval('displayTime()',1000);">
+ <h3>Simple clock using the date object and the setInterval function</h3>
+ <form name="digitalClock">
+ <input type="text" name="display" size="60">
+ </form>
+</body>
+</html>

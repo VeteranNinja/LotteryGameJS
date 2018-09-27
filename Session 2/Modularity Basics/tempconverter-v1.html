@@ -1,0 +1,29 @@
+<html> 
+ <head> 
+ <script type="text/javascript">
+ function convertFtoC(F) 
+ { 
+ var C = 0; // Initialise another local variable 
+ C = 5.0/9.0 * (F-32); 
+ return C; // Return the result back to the function call 
+ } 
+ </script>
+ </head> 
+ <body> 
+ <script type="text/javascript">
+ // JavaScript code including the function call goes here 
+ var defF = 0; 
+ var degC = 0; 
+ 
+ degF = prompt('Please enter temp in degrees F', '212');
+ 
+ // The next statement invokes the function, passes it the value 
+ // of degF and when the function returns the corresponding value of 
+ // temperature in degrees Celsius, it is then assigned to the variable named 
+ // degC
+ degC = convertFtoC( degF ); // Invoke function and pass degF
+ 
+alert('The answer returned by the function is ' + degC ); 
+ </script> 
+ </body> 
+</html> 

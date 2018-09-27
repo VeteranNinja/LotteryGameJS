@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>clock v4</title>
+<script>
+var timerID = 0; // Global variable, visible to all functions
+ var clockRunning = new Boolean; // Boolean variable to flag if the clock is running or stopped.
+ clockRunning = false;
+ //==============================================================================================
+ function startClock()
+ {
+ if (!clockRunning) // Only allow the clock to be started if it is not already running
+ {
+ clockRunning = true; // Set the clockRunning flag to true
+ timerID = setInterval('displayTime()',1000); // This assigns a number to timerID which clearInterval() will use
+ }
+ else
+ alert("The clock is already running and will show the updated time when you pick OK");
+ }
+ //==============================================================================================
+ function stopClock()
+{
+ clearInterval(timerID); // Stop the timer by using the timerID value
+ clockRunning = false; // Set the clockRunning flag to false
+ }
+ //==============================================================================================
+function displayTime()
+ {
+ // This function is invoked automatically every 1 second 
+ var now = new Date();
+ var hours = now.getHours();
+ var minutes = now.getMinutes();
+ var seconds = now.getSeconds();
+ // Build up a time string to display the time in the following format: hh:mm:ss AM|PM
+ // This version converts the hours into 12 hour clock format instead of 24 hour clock
+ // It also puts a leading zero in the minutes and seconds if their values are less than 10. Eg. 01, 02, .... 09, 10, 11 etc
+ var timeString = hours > 12 ? hours - 12 : hours; // Subtract 12 if past 12 noon so the hour is not in 24 hour format
+ timeString += minutes < 10 ? ":0" : ":" ; // if minutes less than 10 use ":0" otherwise use ":"
+ timeString += minutes;
+ timeString += seconds < 10 ? ":0" : ":" ; // if seconds less than 10 use ":0" otherwise use ":"
+ timeString += seconds;
+ timeString += hours > 12 ? " PM" : " AM"; // if hours greater than 12 use " PM" otherwise use " AM"
+ document.digitalClock.display.value = timeString;
+ }
+</script>
+</head>
+
+<body onload = "startClock();">
+ 
+<h3>A digital clock time (12 hour format not 24 hour format) and an AM or PM indication</h3>
+<h4>It also shows a leading zero in the minutes and seconds if their values are under 10</h4>
+<h5>This version overcomes the problem where if the start button is pressed multiple times the 
+stop button won't work</h5>
+ <form name="digitalClock">
+ <input type="text" name="display" size="15">
+ <input type="button" name="startclock" value="Start Clock" onClick="startClock();">
+ <input type="button" name="stopclock" value="Stop Clock" onClick="stopClock();">
+ </form>
+</body>
+</html>

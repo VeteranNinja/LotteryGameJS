@@ -1,0 +1,58 @@
+<html>
+<script type="text/javascript">
+
+function numbers() {
+
+    var numbercount = 6;
+    var maxnumbers = 40;
+
+    var ok = 1;
+    r = new Array(numbercount);
+    for (var i = 1; i <= numbercount; i++) {
+        r[i] = Math.round(Math.random() * (maxnumbers - 1)) + 1;
+    }
+    for (var i = numbercount; i >= 1; i--) {
+        for (var j = numbercount; j >= 1; j--) {
+            if ((i != j) && (r[i] == r[j])) ok = 0;
+        }
+    }
+    if (ok) {
+        var output = "";
+        for (var k = 1; k <= numbercount; k++) {
+            output += r[k] + ", ";
+        }
+        document.lotto.results.value = output;
+    } else numbers();
+}
+
+</script>
+
+</head>
+
+
+
+<body onLoad="numbers">
+<h3></h3>
+<p> This page will generate  numbers consisting of 6 numbers from 1 to 40</p>
+<center>
+
+
+<form name="numbers">
+
+<table width=100% border=0>
+
+<tr>
+<td>
+<p><input type=button value="Check today's lottery numbers" onClick="numbers()"></p>
+Today's Numbers: 
+<p>
+<textarea name="results" rows=1 cols=20></textarea>
+</td>
+</tr>
+
+</table>
+
+</form>
+</center>
+</body>
+</html>

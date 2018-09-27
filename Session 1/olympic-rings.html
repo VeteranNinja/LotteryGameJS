@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html> 
+ 
+<head> 
+ <title>HTML5 Canvas Trials - An empty canvas area</title> 
+</head> 
+ 
+<body> 
+ <h3>HTML5 Canvas Trails</h3> 
+ 
+ 
+ <canvas id="testCanvas" width="400" height="200" 
+ style="border:1px solid #000000;"> 
+ 
+ Your browser does not support the HTML5 canvas tag. 
+ 
+ </canvas> 
+<script>
+var c = document.getElementById("testCanvas");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.arc(65,50,40,0,2*Math.PI);
+ctx.stroke();
+ctx.beginPath();
+ctx.arc(155,50,40,0,2*Math.PI);
+ctx.stroke();
+ctx.beginPath();
+ctx.arc(245,50,40,0,2*Math.PI);
+ctx.stroke();
+ctx.beginPath();
+ctx.arc(205,100,40,0,2*Math.PI);
+ctx.stroke();
+ctx.beginPath();
+ctx.arc(110,100,40,0,2*Math.PI);
+ctx.stroke();
+</script>
+</body> 
+ 
+</html> 

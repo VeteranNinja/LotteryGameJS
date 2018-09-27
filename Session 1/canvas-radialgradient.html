@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html> 
+ 
+<head> 
+ <title>HTML5 Canvas Trials - An empty canvas area</title> 
+</head> 
+ 
+<body> 
+ <h3>HTML5 Canvas Trails</h3> 
+ 
+ 
+ <canvas id="testCanvas" width="170" height="100" 
+ style="border:1px solid #000000;"> 
+ 
+ Your browser does not support the HTML5 canvas tag. 
+ 
+ </canvas> 
+<script>
+
+var c = document.getElementById("testCanvas");
+var ctx = c.getContext("2d");
+
+// Create gradient
+// Create gradient
+var grd = ctx.createRadialGradient(75,50,5,90,60,100);
+grd.addColorStop(0,"red");
+grd.addColorStop(1,"white");
+
+// Fill with gradient
+ctx.fillStyle = grd;
+ctx.fillRect(10,10,150,80);
+
+
+</script>
+
+</body> 
+ 
+</html> 

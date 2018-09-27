@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Session 6 - Task 3</title>
+</head>
+
+<body>
+<script type="text/javascript">
+
+// Output description of the script
+
+document.write("Script to generate random Numbers for a set of 25 numbers<br />");
+document.write("and to calculate their arithmetic mean as well as the sum of all displayed numbers. <br />");
+
+//==============================================================================================
+// Generate another set of 10 exam marks but this time calculate their arithmetic mean
+
+var RanNum = 0;  			  // Variable to hold the random number representing an exam mark
+var numberOfRanNum = 25;   // A constant holding the number of exam marks that need to be generated
+var sumOfRanNum = 0;       // The sum of the exam marks is required to calculate the mean
+var meanOfRanNum = 0;      // The arithmetic mean of the exam marks
+
+document.write("<hr />");
+document.write("A set of random numbers and their calculated arithmetic mean and total sum<br /><br />");
+
+// Set up a loop to generate the set of random exam marks
+
+for (var count = 1 ; count <= numberOfRanNum ; count++ )
+{
+   RanNum = Math.floor(Math.random()*1000 + 1);    // Generate random exam mark
+   document.write(count + ". Random Number = " + RanNum + ". <br />"); // Display the exam mark
+
+   sumOfRanNum += RanNum;                      // Build up the running sum
+}
+
+// Calculate the arithmetic mean.  Dividing two integer numbers results in a floating point number
+
+meanOfRanNum = sumOfRanNum / numberOfRanNum;
+
+// Display the mean
+document.write("<br />");
+document.write("The arithmetic mean of the set of Random Numbers is " + meanOfRanNum + "%");
+document.write("<hr />");
+document.write("<br />");
+document.write("The sum of the set of Random Numbers is " + sumOfRanNum + "%");
+document.write("<hr />");
+</script>
+
+</body>
+</html>

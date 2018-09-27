@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Clock-v2</title>
+<script>
+ var timerID = 0; // Global variable, visible to all functions
+ function startClock()
+ {
+ timerID = setInterval('displayTime()',1000); 
+ }
+ function stopClock()
+ {
+ clearInterval(timerID); // Stop the timer by using the timerID value
+ }
+ function displayTime()
+ {
+ // This function is invoked automatically every 1 second (1000 milliseconds), 
+ // see the setInterval function in the startClock function.
+ var now = new Date();
+ var hours = now.getHours();
+ var minutes = now.getMinutes();
+ var seconds = now.getSeconds();
+ // Build up a time string to display the time in the following format: hh:mm:ss AM or PM
+ var timeString = hours;
+ timeString += ":";
+ timeString += minutes;
+ timeString += ":";
+ timeString += seconds;
+ timeString += hours > 12 ? " PM" : " AM"; // i.e. if hours > 12 use PM otherwise use AM
+ document.digitalClock.display.value = timeString;
+ }
+ </script>
+</head>
+
+<body onload = "startClock();">
+ 
+ <h3>A digital clock showing only the time and an AM or PM indication</h3>
+ <form name="digitalClock">
+ <input type="text" name="display" size="15">
+ <input type="button" name="startclock" value="Start Clock" onClick="startClock();">
+ <input type="button" name="stopclock" value="Stop Clock" onClick="stopClock();">
+ </form>
+</body>
+</html>

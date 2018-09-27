@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Bouncing Ball</title>
+
+<script>
+
+     // Source:  HTML in Easy Steps by Mike McGrath - ISBN 1840784253
+     // Create some global variables that can be accessed by any function
+
+     var ctx, w, h, x, y, dx, dy;
+
+
+     function start()
+     {
+       var canvas = document.getElementById("canvas");
+       ctx = canvas.getContext("2d");
+       ctx.fillStyle = "#F30";                  // Fill colour for the ball
+       canvas.style.background = "#AF1";        // Canvas background colour
+       canvas.style.border = "5px solid #B9F";  // Canvas border settings
+
+       x = 10; y=50;        // Starting coordinates of the centre of the ball
+       dx = 5; dy = 5;      // Delta x and delta y values, i.e. the step sizes in the x and y directions
+       w = canvas.width;    // Put the width of the canvas into the global variable w
+       h = canvas.height;   // Put the height of the canvas into the global variable h
+
+       setInterval('position()',5);  // Execute the position() function every 25 milliseconds
+     }
+
+     function position()
+     {
+        draw();  // Draw the ball using the current values of x and y as its centre point
+
+        // modify the x and y coordinates for when the ball is drawn next time
+        // First check if the ball is about to touch a wall and if so change the sign on the delta value(s)
+
+        if ( (x+dx > w) || (x+dx < 0) )
+          dx = -dx;
+
+        if ( (y+dy > h) || (y+dy < 0) )
+          dy = -dy;
+
+        x += dx;
+        y += dy;
+
+     }
+
+     function draw()
+     {
+       ctx.clearRect(0,0,w,h);             // Clear any content on the canvas
+       ctx.beginPath();                    // Begin the path definition for the arc that makes the circle
+       ctx.arc(x,y,15,0,2*Math.PI);        // Draw an arc of radius 30 pixels, start angle of 0, end angle of 2 PI radians
+       ctx.fill();                         // Fill the drawn path (arc) with the current fill style colour
+
+
+     }
+
+
+</script>
+
+</head>
+
+
+<body onload = "start()">
+  <h3>Bouncing Ball based on the setInterval() timer function</h3>
+  <h4>Source: HTML5 In Easy Steps - Mike McGrath - ISBN 1840784253</h4>
+
+  <canvas id="canvas" width="600" height="300">
+    Your browser does not support the HTML5 Canvas element.
+  </canvas>
+
+
+</body>
+</html>

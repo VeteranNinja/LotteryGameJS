@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<script type="text/javascript">
+
+document.write("Script to generate 10 exam marks and to display a FAIL message for the marks below 40% <br />");
+document.write("or a PASS message otherwise.<br />");
+document.write("The script also counts the number of fails and the number of passes.<br /><br />");
+
+
+var examMark = 0;              
+var numberOfExamMarks = 10;    
+var status = "UNKNOWN"         
+var gradeA_Count = 0; 
+var gradeB_Count = 0; 
+var gradeC_Count = 0; 
+var gradeD_Count = 0; 
+var borderLine_Count = 0; 
+var fail_Count = 0;           
+
+
+
+for (var count = 1 ; count <= numberOfExamMarks ; count++ )
+{
+   examMark = Math.floor(Math.random()*100 + 1);    
+
+   if ( examMark >= 70%)
+   {
+      status = "GRADE A";    
+      gradeA_Count++;      
+   }
+   else if ( examMark >= 60%)
+   {
+      status = "GRADE B";    
+      gradeB_Count++;    
+   }
+   else if ( examMark >= 50%)
+   {
+      status = "GRADE C";    
+      gradeC_Count++;    
+   }
+  else if ( examMark >= 40%)
+   {
+      status = "GRADE D";    
+      gradeD_Count++;    
+   }
+   else if ( examMark >= 35%)
+   {
+      status = "BORDERLINE PASS";    
+      borderLine_Count++;    
+   }
+   else
+  {
+      status = "FAIL";    
+      fail_Count++;    
+   }
+    
+
+
+   document.write(counter + ". Exam mark = " + examMark + "%. " + status + "<br />" );
+
+}
+
+
+document.write("<hr />");
+document.write("The number of students who have passed with an A = " + gradeA_Count + "<br />");
+document.write("The number of students who have passed with an B = " + gradeB_Count + "<br />");
+document.write("The number of students who have passed with an C = " + gradeC_Count + "<br />");
+document.write("The number of students who have passed with an A = " + gradeD_Count + "<br />");
+document.write("The number of students who have Borderline passed = " + borderLine_Count + "<br />");
+document.write("The number of students who have failed = " + fail_Count + "<br />");
+document.write("<hr />");
+
+document.write("END OF JAVASCRIPT");
+
+</script>
+
+</body>
+</html>

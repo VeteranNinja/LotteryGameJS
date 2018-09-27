@@ -1,0 +1,53 @@
+h1 {color:#CCC;} 
+h3 {color:#FFF}
+ p {margein-left:20px; color:white}
+ 
+ body {background-color:#00C;} =
+ 
+ img {border-style:style:solid; border:red; margin-left: 100px}
+ 
+ table {border:yellow}
+
+div.title
+{
+width:810px;
+height: 100px;
+float:left;
+}
+div.logo
+{
+width:600px;
+height: 100px;
+float:left;
+}
+
+div.links
+{
+	
+
+	float: left;
+}
+a:link,a:visited
+{
+	display: block;
+	width: 130px;
+	height: 100px;
+	font-weight: bold;
+	color: #FF0;
+	background-color: #000;
+	text-align: center;
+	padding: 20px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+a:hover,a:active
+{
+	background-color: #FF00FF;
+}
+ul
+{
+list-style-type:none;
+margin:0;
+padding:0;
+overflow:hidden;
+}

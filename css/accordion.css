@@ -1,0 +1,21 @@
+H1 {
+	MARGIN-BOTTOM: 25px; FONT-FAMILY: "Trebuchet MS", Arial, Helvetica, sans-serif
+}
+H2 {
+	FONT-FAMILY: "Trebuchet MS", Arial, Helvetica, sans-serif
+}
+P {
+	FONT: 18px Georgia, "Times New Roman", Times, serif
+}
+#accordion {
+	LIST-STYLE-TYPE: none; WIDTH: 500px; POSITION: relative; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px
+}
+#accordion DIV {
+	BORDER-TOP: #666 1px; BORDER-RIGHT: #666 1px solid; BORDER-BOTTOM: #666 1px solid; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: #666 1px solid; PADDING-RIGHT: 0px
+}
+#accordion P {
+	PADDING-BOTTOM: 10px; PADDING-TOP: 10px; PADDING-LEFT: 10px; MARGIN: 0px; PADDING-RIGHT: 10px
+}
+#accordion H2 {
+	CURSOR: pointer; FONT-SIZE: 1.2em; TEXT-DECORATION: none; BACKGROUND: #879d9d; BORDER-BOTTOM: #666 1px solid; TEXT-TRANSFORM: uppercase; FONT-WEIGHT: bold; COLOR: #fff; PADDING-BOTTOM: 4px; PADDING-TOP: 5px; PADDING-LEFT: 10px; MARGIN: 0px; PADDING-RIGHT: 10px
+}
